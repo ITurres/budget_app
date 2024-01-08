@@ -13,3 +13,60 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Proxima-Nova-Regular.woff2') format('woff2');
+}
+
+:root {
+  --font-proxima-nova: 'Proxima Nova', sans-serif;
+  --main-color: #3778c2;
+  --second-color: #5fb523;
+  --text-color: #434b54;
+  --bg-main-color: #f4f4f4;
+  --off-white: #fcfcfc;
+}
+
+.bg-main-color {
+  background-color: var(--bg-main-color);
+}
+
+body {
+  font-family: var(--font-proxima-nova);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.app-name--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+}
+
+.app-name {
+  font-family: 'Pacifico', cursive;
+  font-weight: 600;
+}
+
+.my-btn {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.btn-main-color {
+  background-color: var(--main-color);
+  color: var(--off-white);
+  border: 1px solid var(--main-color);
+}
+
+.btn-main-color:focus,
+.btn-main-color:hover {
+  box-shadow: 0 0 0 0.2rem rgba(55, 120, 194, 0.5);
+  color: var(--off-white);
+}
