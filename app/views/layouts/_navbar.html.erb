@@ -1,0 +1,11 @@
+<nav class="my-navbar d-flex justify-content-between">
+    <%= link_to path do %>
+        <i class="fa-solid fa-arrow-left"></i>
+    <% end %>
+
+    <span class="my-navbar-title"><%= title %></span>
+
+    <% # ! hidden to leave space for the login/signin submit buttons %>
+    <% # ! that will be position absolute displayed %>
+    <span style="visibility: hidden;">0</span>
+</nav>
