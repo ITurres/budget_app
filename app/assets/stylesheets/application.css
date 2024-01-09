@@ -18,6 +18,7 @@
  *= require_tree .
  *= require_self
  */
+
 @font-face {
   font-family: 'Proxima Nova';
   src: url('../fonts/Proxima-Nova-Regular.woff2') format('woff2');
