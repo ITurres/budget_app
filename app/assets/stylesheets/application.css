@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-
 @import 'form.css';
 @import 'navbar.css';
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -18,7 +18,6 @@
  *= require_tree .
  *= require_self
  */
-
 @font-face {
   font-family: 'Proxima Nova';
   src: url('../fonts/Proxima-Nova-Regular.woff2') format('woff2');
