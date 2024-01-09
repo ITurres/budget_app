@@ -1,29 +1,42 @@
-<h2>Sign up</h2>
+<%= render "layouts/navbar", path: root_path, title: "register" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= form_for(resource, as: resource_name,
+                       url: registration_path(resource_name),
+                       class: "mt-5") do |f| %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name",
+                            placeholder: "Full Name",
+                            aria: { label: "Full Name" },
+                            required: true,
+                            class: "my-form-control" %>
+  <hr class="my-form__hr">  <!-- ! horizontal line -->
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                              placeholder: "Email",
+                              aria: { label: "Email" },
+                              required: true,
+                              class: "my-form-control" %>
   </div>
-
+  <hr class="my-form__hr">  <!-- ! horizontal line -->
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password",
+                                    placeholder: "Password, #{@minimum_password_length} characters minimum",
+                                    aria: { label: "Password" },
+                                    required: true,
+                                    class: "my-form-control" %>
   </div>
-
+  <hr class="my-form__hr">  <!-- ! horizontal line -->
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation,
+                         autocomplete: "new-password",
+                         placeholder: "Confirm Password",
+                         aria: { label: "Confirm Password" },
+                         required: true,
+                         class: "my-form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Next", class: "submit-btn" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
