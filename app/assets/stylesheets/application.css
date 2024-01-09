@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import 'form.css';
+@import 'navbar.css';
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,8 +19,6 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
 @font-face {
   font-family: 'Proxima Nova';
   src: url('../fonts/Proxima-Nova-Regular.woff2') format('woff2');
@@ -26,6 +29,7 @@
   --main-color: #3778c2;
   --second-color: #5fb523;
   --text-color: #434b54;
+  --light-gray: #b6b6b6;
   --bg-main-color: #f4f4f4;
   --off-white: #fcfcfc;
 }
@@ -38,19 +42,30 @@ body {
   font-family: var(--font-proxima-nova);
   font-weight: 400;
   font-size: 16px;
+  background-color: var(--bg-main-color);
   color: var(--text-color);
+}
+
+main {
+  margin-top: 4rem;
 }
 
 .app-name--container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 95%;
+  height: 80%;
 }
 
 .app-name {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', 'Satisfy', cursive;
   font-weight: 600;
+}
+
+.access-buttons--container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .my-btn {
