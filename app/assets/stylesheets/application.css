@@ -26,6 +26,7 @@
   --main-color: #3778c2;
   --second-color: #5fb523;
   --text-color: #434b54;
+  --light-gray: #b6b6b6;
   --bg-main-color: #f4f4f4;
   --off-white: #fcfcfc;
 }
@@ -38,7 +39,12 @@ body {
   font-family: var(--font-proxima-nova);
   font-weight: 400;
   font-size: 16px;
+  background-color: var(--bg-main-color);
   color: var(--text-color);
+}
+
+main {
+  margin-top: 4rem;
 }
 
 .app-name--container {
