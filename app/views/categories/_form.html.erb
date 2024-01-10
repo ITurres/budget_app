@@ -1,3 +1,5 @@
+<%= render "layouts/navbar", path: categories_path, title: "Add a new category" %>
+
 <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
     <div style="color: red">
@@ -11,17 +13,26 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="field">
+    <%= form.text_field :name,
+                        placeholder: "Name",
+                        aria: { label: "Name" },
+                        required: true,
+                        class: "my-form-control" %>
+    
   </div>
 
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+  <div class="field btn-second--container p-3 mt-4">
+    <span class="field__span">Icon Generator</span>
+    <%= form.text_field :icon,
+                        placeholder: "You expended it at... E.g. Apple",
+                        aria: { label: "Icon" },
+                        required: true,
+                        maxlength: 12,
+                        class: "my-form-control btn-second-color mb-3" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="actions">
+    <%= form.submit "Add", class: "submit-btn" %>
   </div>
 <% end %>
