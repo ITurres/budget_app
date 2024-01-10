@@ -38,6 +38,8 @@ example_id                                                   | status | run_time
 ./spec/routing/transaction_details_routing_spec.rb[1:1:6]    | passed | 0.00454 seconds |
 ./spec/routing/transaction_details_routing_spec.rb[1:1:7]    | passed | 0.00508 seconds |
 ./spec/routing/transaction_details_routing_spec.rb[1:1:8]    | passed | 0.00486 seconds |
+./spec/views/categories/new.html.erb_spec.rb[1:1]            | passed | 4.16 seconds    |
+./spec/views/categories/new.html.erb_spec.rb[1:2]            | passed | 1.87 seconds    |
 ./spec/views/devise/registration/new.html.erb_spec.rb[1:1:1] | passed | 4.8 seconds     |
 ./spec/views/devise/sessions/new.html.erb_spec.rb[1:1:1]     | passed | 1.16 seconds    |
 ./spec/views/home/index.html.erb_spec.rb[1:1]                | passed | 2.8 seconds     |
