@@ -1,0 +1,63 @@
+.access-buttons--container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.my-btn {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.btn-main-color {
+  background-color: var(--main-color);
+  color: var(--off-white);
+  border: 1px solid var(--main-color);
+}
+
+.btn-main-color:focus,
+.btn-main-color:hover {
+  box-shadow: 0 0 0 0.2rem rgba(55, 120, 194, 0.5);
+  color: var(--off-white);
+}
+
+.btn-second--container {
+  position: relative;
+  background-color: var(--second-color);
+  border-radius: 0.2rem;
+  min-width: 350px;
+  max-width: max-content;
+  margin: 0 auto;
+}
+
+.field__span {
+  position: absolute;
+  bottom: 1px;
+  right: 0;
+  padding: 0 3px 0 3px;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  background: var(--second-color-dark);
+  color: var(--off-white);
+}
+
+.btn-second-color {
+  background-color: var(--second-color);
+  color: var(--off-white);
+  border: 1px solid var(--off-white);
+  border-radius: 0.2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-second-color:focus,
+.btn-second-color:hover {
+  box-shadow: 0 0 0 0.2rem var(--off-white);
+  cursor: pointer;
+}
+
+.btn-second-color::placeholder {
+  color: var(--off-white);
+}
