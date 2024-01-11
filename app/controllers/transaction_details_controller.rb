@@ -2,16 +2,6 @@ class TransactionDetailsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_transaction_detail, only: %i[destroy], except: %i[create]
 
-  # GET /transaction_details or /transaction_details.json
-  def index
-    @transaction_details = TransactionDetail.all
-  end
-
-  # GET /transaction_details/1 or /transaction_details/1.json
-  def show
-    @transaction_detail = TransactionDetail.find(params[:id])
-  end
-
   # GET /transaction_details/new
   def new
     @transaction_detail = TransactionDetail.new
