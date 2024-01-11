@@ -4,9 +4,10 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.includes(category_transaction_details: [:transaction_detail]).where(user_id: current_user.id)
-
-    @categories
+    # rubocop:disable Layout/LineLength
+    @categories = Category.includes(category_transaction_details: [:transaction_detail]).where(user_id: current_user.id).order(created_at: :desc)
+    # rubocop:enable Layout/LineLength
+    @total_expenses = @categories.sum(&:total_amount_spent)
   end
 
   # GET /categories/new
@@ -23,7 +24,7 @@ class CategoriesController < ApplicationController
 
     if @category.save
       flash[:success] = 'Category created!'
-      redirect_to category_url(@category)
+      redirect_to categories_path
     else
       flash[:danger] = 'Sorry, Try again!'
     end
