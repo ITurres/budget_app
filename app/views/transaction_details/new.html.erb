@@ -1,9 +1,3 @@
-<h1>New transaction detail</h1>
+<%= render "layouts/navbar", path: categories_path, title: "New transaction" %>
 
-<%= render "form", transaction_detail: @transaction_detail %>
-
-<br>
-
-<div>
-  <%= link_to "Back to transaction details", transaction_details_path %>
-</div>
+<%= render "form", transaction_detail: @transaction_detail, categories: @categories %>

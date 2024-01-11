@@ -1,54 +1,37 @@
 class TransactionDetailsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_transaction_detail, only: %i[show edit update destroy]
-
-  # GET /transaction_details or /transaction_details.json
-  def index
-    @transaction_details = TransactionDetail.all
-  end
-
-  # GET /transaction_details/1 or /transaction_details/1.json
-  def show; end
+  before_action :set_transaction_detail, only: %i[destroy], except: %i[create]
 
   # GET /transaction_details/new
   def new
     @transaction_detail = TransactionDetail.new
-  end
 
-  # GET /transaction_details/1/edit
-  def edit; end
+    @categories = Category.all
+  end
 
   # POST /transaction_details or /transaction_details.json
   def create
-    @transaction_detail = TransactionDetail.new(transaction_detail_params)
+    @transaction_detail = TransactionDetail.new(name: transaction_detail_params[:name],
+                                                amount: transaction_detail_params[:amount],
+                                                user_id: current_user.id)
 
-    respond_to do |format|
-      if @transaction_detail.save
-        format.html do
-          redirect_to transaction_detail_url(@transaction_detail),
-                      notice: 'Transaction detail was successfully created.'
-        end
-        format.json { render :show, status: :created, location: @transaction_detail }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @transaction_detail.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+    @transaction_detail.user = current_user
 
-  # PATCH/PUT /transaction_details/1 or /transaction_details/1.json
-  def update
-    respond_to do |format|
-      if @transaction_detail.update(transaction_detail_params)
-        format.html do
-          redirect_to transaction_detail_url(@transaction_detail),
-                      notice: 'Transaction detail was successfully updated.'
-        end
-        format.json { render :show, status: :ok, location: @transaction_detail }
+    if @transaction_detail.save
+      # rubocop:disable Layout/LineLength
+      @category_transaction_details = CategoryTransactionDetail.new(category_id: transaction_detail_params[:category_id],
+                                                                    transaction_detail_id: @transaction_detail.id)
+      # rubocop:enable Layout/LineLength
+      if @category_transaction_details.save
+        flash[:success] = 'Transaction created!'
+        redirect_to category_path(transaction_detail_params[:category_id])
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @transaction_detail.errors, status: :unprocessable_entity }
+        flash[:danger] = 'Sorry, Try again!'
+        redirect_to new_transaction_detail_path
       end
+    else
+      flash[:danger] = 'Sorry, Try again!'
+      redirect_to new_transaction_detail_path
     end
   end
 
@@ -56,10 +39,8 @@ class TransactionDetailsController < ApplicationController
   def destroy
     @transaction_detail.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to transaction_details_url, notice: 'Transaction detail was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:info] = 'Transaction deleted!'
+    redirect_to transaction_details_path
   end
 
   private
@@ -71,6 +52,6 @@ class TransactionDetailsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def transaction_detail_params
-    params.require(:transaction_detail).permit(:name, :amount, :user_id)
+    params.require(:transaction_detail).permit(:name, :amount, :category_id)
   end
 end

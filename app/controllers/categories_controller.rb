@@ -4,7 +4,9 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.includes(category_transaction_details: [:transaction_detail]).where(user_id: current_user.id)
+
+    @categories
   end
 
   # GET /categories/new
