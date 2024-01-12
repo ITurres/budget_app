@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import 'form.css';
-@import 'navbar.css';
+@import './navbar.css';
 @import 'buttons.css';
 @import 'categories-page.css';
 @import 'transactions-page.css';
