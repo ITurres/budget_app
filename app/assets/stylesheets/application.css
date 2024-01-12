@@ -81,7 +81,7 @@ main:has(#categories) {
   z-index: 100;
 }
 
-.alert-sign-out {   
+.alert-sign-out {
   top: 1rem;
   bottom: unset;
 }
