@@ -10,6 +10,12 @@ class CategoriesController < ApplicationController
     @total_expenses = @categories.sum(&:total_amount_spent)
   end
 
+  def show
+    @transactions = @category.transaction_details.order(created_at: :desc)
+
+    @total_expenses = @category.total_amount_spent
+  end
+
   # GET /categories/new
   def new
     @category = Category.new
