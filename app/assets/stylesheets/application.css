@@ -22,11 +22,6 @@
  *= require_self
  */
 
-@font-face {
-  font-family: 'Proxima Nova';
-  src: url('../fonts/Proxima-Nova-Regular.woff2') format('woff2');
-}
-
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -45,7 +40,6 @@
 }
 
 :root {
-  --font-proxima-nova: 'Proxima Nova', sans-serif;
   --main-color: #3778c2;
   --second-color: #5fb523;
   --second-color-dark: #356c0e;
@@ -60,7 +54,7 @@
 }
 
 body {
-  font-family: var(--font-proxima-nova);
+  font-family: sans-serif;
   font-weight: 400;
   font-size: 16px;
   background-color: var(--bg-main-color);
@@ -89,7 +83,7 @@ main:has(#categories) {
 
 .alert {
   position: absolute;
-  top: 1.8rem;
+  bottom: 6rem;
   left: 0;
   right: 0;
   z-index: 100;

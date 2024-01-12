@@ -37,6 +37,23 @@
 .categories_card {
   background-color: var(--off-white);
   margin-bottom: 0.8rem;
+  animation: card-animation-fade-in  0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.categories_card.apply-hover:hover {
+  transform: scale(1.01);
+  box-shadow: 0 2px 5px var(--light-gray);
+}
+
+@keyframes card-animation-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .categories_card-text {
