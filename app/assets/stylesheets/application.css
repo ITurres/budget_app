@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-@import 'form.css';
-@import './navbar.css';
-@import 'buttons.css';
-@import 'categories-page.css';
-@import 'transactions-page.css';
+@import 'form';
+@import 'navbar';
+@import 'buttons';
+@import 'categories-page';
+@import 'transactions-page';
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
