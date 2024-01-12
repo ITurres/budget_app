@@ -5,7 +5,7 @@
               class: "submit-btn text-decoration-none") %>
 
 <div id="categories">
-  <header class="categories__header text-center">
+  <header class="categories__header text-center pt-2">
     <span>Most recent</span>
     <br/>
     <span>&#x2022;</span>
@@ -19,7 +19,7 @@
   <div class="categories__list">
     <% @categories.each do |category| %>
       <%= link_to category_path(category), class: "text-decoration-none" do %>
-        <%= render category %>
+        <%= render category, apply_hover: true %>
       <% end %>
     <% end %>
   </div>
