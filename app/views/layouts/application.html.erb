@@ -29,11 +29,14 @@
   <body>
     <div class="container mt-1 text-center">
       <% flash.each do |key, message| %>
-          <div class="alert alert-<%= key %> alert-dismissible fade show m-2">
-              <%= message %>
-                <button type="button" class="close text-<%= key %>" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+        <% if key == "notice" %>
+          <% key = "info" %>
+        <% end %>
+        <div class="alert alert-<%= key %> <%= "alert-sign-out" if message == "Signed out successfully." %> alert-dismissible fade show m-2">
+            <%= message %>
+            <button type="button" class="close text-<%= key %>" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
       <% end %>
     </div>

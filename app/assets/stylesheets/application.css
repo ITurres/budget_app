@@ -80,3 +80,8 @@ main:has(#categories) {
   right: 0;
   z-index: 100;
 }
+
+.alert-sign-out {   
+  top: 1rem;
+  bottom: unset;
+}
