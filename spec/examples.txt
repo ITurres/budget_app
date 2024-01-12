@@ -1,15 +1,16 @@
 example_id                                                         | status | run_time        |
 ------------------------------------------------------------------ | ------ | --------------- |
-./spec/controllers/categories_controller_spec.rb[1:1:1]            | passed | 0.5563 seconds  |
-./spec/controllers/categories_controller_spec.rb[1:2:1]            | passed | 0.03806 seconds |
-./spec/controllers/categories_controller_spec.rb[1:3:1:1]          | passed | 0.04594 seconds |
-./spec/controllers/categories_controller_spec.rb[1:3:1:2]          | passed | 0.03319 seconds |
-./spec/controllers/categories_controller_spec.rb[1:3:2:1]          | passed | 0.02793 seconds |
-./spec/controllers/categories_controller_spec.rb[1:4:1:1]          | passed | 0.02859 seconds |
-./spec/controllers/categories_controller_spec.rb[1:4:1:2]          | passed | 0.03089 seconds |
-./spec/controllers/categories_controller_spec.rb[1:4:2:1]          | passed | 0.02773 seconds |
-./spec/controllers/categories_controller_spec.rb[1:5:1]            | passed | 0.0308 seconds  |
-./spec/controllers/categories_controller_spec.rb[1:5:2]            | passed | 0.02746 seconds |
+./spec/controllers/categories_controller_spec.rb[1:1:1]            | passed | 0.54213 seconds |
+./spec/controllers/categories_controller_spec.rb[1:2:1]            | passed | 0.0761 seconds  |
+./spec/controllers/categories_controller_spec.rb[1:3:1]            | passed | 0.01682 seconds |
+./spec/controllers/categories_controller_spec.rb[1:4:1:1]          | passed | 0.05447 seconds |
+./spec/controllers/categories_controller_spec.rb[1:4:1:2]          | passed | 0.04036 seconds |
+./spec/controllers/categories_controller_spec.rb[1:4:2:1]          | passed | 0.03882 seconds |
+./spec/controllers/categories_controller_spec.rb[1:5:1:1]          | passed | 0.02823 seconds |
+./spec/controllers/categories_controller_spec.rb[1:5:1:2]          | passed | 0.03954 seconds |
+./spec/controllers/categories_controller_spec.rb[1:5:2:1]          | passed | 0.03083 seconds |
+./spec/controllers/categories_controller_spec.rb[1:6:1]            | passed | 0.02552 seconds |
+./spec/controllers/categories_controller_spec.rb[1:6:2]            | passed | 0.02872 seconds |
 ./spec/controllers/transaction_details_controller_spec.rb[1:1:1]   | passed | 0.49889 seconds |
 ./spec/controllers/transaction_details_controller_spec.rb[1:2:1:1] | passed | 0.0552 seconds  |
 ./spec/controllers/transaction_details_controller_spec.rb[1:3:1]   | passed | 0.01962 seconds |
@@ -47,6 +48,12 @@ example_id                                                         | status | ru
 ./spec/views/categories/index.html.erb_spec.rb[1:2:2]              | passed | 2.59 seconds    |
 ./spec/views/categories/new.html.erb_spec.rb[1:1]                  | passed | 4.16 seconds    |
 ./spec/views/categories/new.html.erb_spec.rb[1:2]                  | passed | 1.87 seconds    |
+./spec/views/categories/show.html.erb_spec.rb[1:1]                 | passed | 7.96 seconds    |
+./spec/views/categories/show.html.erb_spec.rb[1:2]                 | passed | 4.22 seconds    |
+./spec/views/categories/show.html.erb_spec.rb[1:3:1]               | passed | 5.52 seconds    |
+./spec/views/categories/show.html.erb_spec.rb[1:4:1]               | passed | 4.35 seconds    |
+./spec/views/categories/show.html.erb_spec.rb[1:5]                 | passed | 4.64 seconds    |
+./spec/views/categories/show.html.erb_spec.rb[1:6:1]               | passed | 5.05 seconds    |
 ./spec/views/devise/registration/new.html.erb_spec.rb[1:1:1]       | passed | 4.8 seconds     |
 ./spec/views/devise/sessions/new.html.erb_spec.rb[1:1:1]           | passed | 1.16 seconds    |
 ./spec/views/home/index.html.erb_spec.rb[1:1]                      | passed | 2.8 seconds     |

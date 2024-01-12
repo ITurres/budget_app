@@ -17,7 +17,7 @@
 .categories__list {
   overflow-y: auto;
   max-height: 70vh;
-  padding-bottom: 2rem !important;
+  padding-bottom: 7rem !important;
 }
 
 .categories__list,
