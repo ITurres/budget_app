@@ -115,9 +115,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [My Budget - Live Demo Link]()
+- [My Budget - Live Demo Link](https://mybudget-i9f9.onrender.com/)
 
-- [My Budget - Project Presentation]()
+- [My Budget - Project Presentation](https://drive.google.com/file/d/1cdcdvhGv5zhpGOX83wF7zN_T59xkHqvk/view?usp=sharing)
 
 ---
 
