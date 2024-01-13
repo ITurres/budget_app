@@ -6,7 +6,7 @@ class TransactionDetailsController < ApplicationController
   def new
     @transaction_detail = TransactionDetail.new
 
-    @categories = Category.all
+    @categories = Category.find(current_user.categories.ids)
   end
 
   # POST /transaction_details or /transaction_details.json
