@@ -1,0 +1,46 @@
+<%= form_with(model: transaction_detail) do |form| %>
+  <% if transaction_detail.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(transaction_detail.errors.count, "error") %> prohibited this transaction_detail from being saved:</h2>
+
+      <ul>
+        <% transaction_detail.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :name,
+                        placeholder: "Name - max 40 characters",
+                        aria: { label: "Name" },
+                        required: true,
+                        maxlength: 40,
+                        class: "my-form-control" %>
+    
+  </div>
+  <hr class="my-form__hr">  <!-- ! horizontal line -->
+  <div>
+    <%= form.number_field :amount,
+                          placeholder: "$ Amount expended",
+                          aria: { label: "Amount" },
+                          required: true,
+                          min: 0,
+                          class: "my-form-control" %>
+  </div>
+
+  <div class="field btn-second--container p-3 mt-4 text-left">
+    <%= form.collection_select :category_id,
+                               categories || [],
+                               :id,
+                               :name,
+                               { prompt: "Select a category" },
+                               { required: true,
+                                 class: "form-select btn-second-color" } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add", class: "submit-btn" %>
+  </div>
+<% end %>

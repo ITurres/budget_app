@@ -1,0 +1,51 @@
+form {
+  text-align: center;
+}
+
+.my-form-control {
+  width: 100%;
+  max-width: 500px;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  color: var(--text-color);
+}
+
+.my-form-control::placeholder {
+  padding-left: 0.5rem;
+  color: var(--light-gray);
+}
+
+.my-form__hr {
+  background-color: var(--light-gray);
+  width: 95%;
+  max-width: 475px;
+  margin: 0;
+  margin-left: 5%;
+}
+
+.submit-btn {
+  font-size: 1.1rem;
+  font-weight: 200;
+  position: absolute;
+  top: 0.4rem;
+  right: 0.3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--off-white);
+}
+
+@media (min-width: 500px) {
+  .my-form__hr {
+    width: 57%;
+    max-width: 474px;
+    margin-left: 25%;
+  }
+}
+
+select {
+  font-size: 1.2rem;
+  padding: 0.3rem 0.1rem 0.3rem 0.2rem;
+}

@@ -1,0 +1,35 @@
+<%= render "layouts/navbar", path: root_path, title: "login" %>
+
+<%= form_for(resource, as: resource_name,
+                       url: session_path(resource_name),
+                       class: "mt-5") do |f| %>
+  
+  <div>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                                placeholder: "Email",
+                                aria: { label: "Email" },
+                                required: true,
+                                class: "my-form-control" %>
+    </div>
+    <hr class="my-form__hr">  <!-- ! horizontal line -->
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "current-password",
+                                      placeholder: "Password",
+                                      aria: { label: "Password" },
+                                      required: true,
+                                      class: "my-form-control" %>
+    </div>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field text-center text-muted mt-4">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in", class: "submit-btn" %>
+  </div>
+<% end %>

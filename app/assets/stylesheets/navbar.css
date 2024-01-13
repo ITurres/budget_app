@@ -1,0 +1,27 @@
+.my-navbar {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 0.5rem;
+  color: var(--off-white);
+  background-color: var(--main-color);
+  vertical-align: middle;
+}
+
+.my-navbar-title,
+.fa-arrow-left {
+  color: var(--off-white);
+}
+
+.my-navbar-title {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.fa-arrow-left {
+  font-size: 1.5rem;
+  vertical-align: text-top;
+}

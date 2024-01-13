@@ -1,0 +1,32 @@
+<%= render "layouts/navbar", path: nil, title: "categories" %>
+
+<%= button_to("Sign Out", destroy_user_session_path,
+              method: :delete,
+              class: "submit-btn text-decoration-none") %>
+
+<div id="categories">
+  <header class="categories__header text-center pt-2">
+    <span>Most recent</span>
+    <br/>
+    <span>&#x2022;</span>
+  </header>
+
+  <div class="categories__total-amount d-flex justify-content-between">
+    <span class="text-muted">Total expenses</span>
+    <span><strong><%= number_to_currency(@total_expenses) %></strong></span>
+  </div>
+
+  <div class="categories__list">
+    <% @categories.each do |category| %>
+      <%= link_to category_path(category), class: "text-decoration-none" do %>
+        <%= render category, apply_hover: true %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="new-category-btn--container p-3">
+    <%= link_to "New category", new_category_path,
+                class: "btn btn-second-color new-category-btn" %>
+  </div>
+</div>
+

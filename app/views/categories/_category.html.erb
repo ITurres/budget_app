@@ -1,0 +1,19 @@
+<div id="<%= dom_id category %>" class="categories_card <%= apply_hover ? "apply-hover" : "" %>">
+
+  <div class="categories_card--img-text-holder">
+    <img src="<%= category.icon %>" alt="<%= category.name %> icon" />
+
+    <div class="categories_card-text">
+      <span class="text-muted"><%= category.name %></span>
+      <span class="text-muted categories_card-text-date"><%= category.created_at.strftime("%d %b, %Y") %></span>
+    </div>
+  </div>
+
+  <div class="categories_card-amount">
+    <span>
+      <strong>
+        <%= number_to_currency(category.transaction_details.sum(:amount)) %>
+      </strong>    
+    </span>
+  </div>
+</div>

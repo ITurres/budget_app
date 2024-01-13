@@ -1,0 +1,58 @@
+<%= render "layouts/navbar", path: categories_path, title: "transactions" %>
+
+<div>
+  <%= render @category, apply_hover: false %>
+
+
+  <div class="categories--actions">
+    <%= link_to "edit category", edit_category_path(@category),
+                class: "btn btn-outline-primary" %>
+    <%= button_to "delete category", @category,
+                  method: :delete,
+                  class: "btn btn-outline-danger" %>
+  </div>
+</div>
+
+<div id="categories">
+  <header class="categories__header text-center pt-2">
+    <span>Most recent</span>
+    <br/>
+    <span>&#x2022;</span>
+  </header>
+
+  <div class="categories__total-amount d-flex justify-content-between">
+    <span class="text-muted">Total expenses</span>
+    <span><strong><%= number_to_currency(@category.transaction_details.sum(:amount)) %></strong></span>
+  </div>
+
+  <div class="categories__list transactions">
+    <% @transactions.each do |transaction| %>
+      <div id="<%= dom_id transaction %>" class="categories_card apply-hover relative">
+        <div class="categories_card--img-text-holder">
+          <div class="categories_card-text">
+            <span class="text-muted transaction-name"><%= transaction.name %></span>
+            <span class="text-muted categories_card-text-date"><%= transaction.created_at.strftime("%d %b, %Y") %></span>
+          </div>
+        </div>
+
+        <div class="categories_card-amount">
+          <span>
+            <strong>
+              <%= number_to_currency(transaction.amount) %>
+            </strong>    
+          </span>
+        </div>
+
+        <%= button_to "delete", transaction,
+                      method: :delete,
+                      class: "btn btn-outline-danger transaction-btn" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="new-category-btn--container p-3">
+    <%= link_to "New transaction", new_transaction_detail_path,
+                class: "btn btn-second-color new-category-btn" %>
+  </div>
+</div>
+
